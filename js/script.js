@@ -63,3 +63,27 @@ jQuery(document).ready(function() {
 		$('body').toggleClass('opened');
 	});
 });
+
+
+
+/*==================================================
+
+Exchange imgs
+==================================================*/
+
+$(window).on('load resize', function(){
+
+	var wid = window.innerWidth;
+	
+	//pc,sp
+	if( wid < 600 ){
+		$('.exchange_sp').each(function(){
+			$(this).attr("src",$(this).attr("src").replace('_pc', '_sp'));
+		});
+	} else if( wid > 600 ){
+		$('.exchange_sp').each(function(){
+			$(this).attr("src",$(this).attr("src").replace('_sp', '_pc'));
+		});
+	}
+
+});
